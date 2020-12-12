@@ -1,0 +1,228 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #dadada;
+			}
+			#pageContainer{
+				
+				width: 1300px;
+				margin: 0 auto;
+				background: white;
+			}
+			#pageHeader{
+				width: 100%;
+				height: 143px;
+				background: #002244;	
+			}
+			#logo{
+				width: 370px;
+				height: 45px;
+				background: white;
+				margin: 40px 0 58px 15px;
+				float: left;
+			}
+			#body{
+				background:#002244;
+				height: 650px;
+				display:block;
+			}
+			#mainContainer{
+				width:auto;
+				height: 600px;
+				margin:auto 22px;
+				background:white;
+			}
+			.pod{
+				display: block;
+				padding: 10px;
+				position: relative;
+			}
+			#mainForm{
+				float: left;
+				margin-left: 20px;
+			}
+			#displayTable{
+				width: 630px;
+				height: 500px;
+				float:right;
+				margin-right: 10px;
+				overflow: auto;
+			}
+			.pod .heading{
+				display: inline-block;
+				background-color: #818a8f;
+				color: white;
+				font-size: 15px;
+				font-weight: bold;
+				text-align: center;
+				padding: 0 20px 2px;
+				position: relative;
+			}
+			form{
+				display:block;
+				margin-top: 0;
+			}
+			.detailsGroup {
+				
+				width: 500px;
+			}
+			.editFeild{
+				width: 100%;
+			}
+			.editFeild label{
+				width: 120px;
+				vertical-align: baseline;
+				display: inline-block;
+			}
+			.inputField{
+				width: 150px;
+			}
+			.symbol{
+				width: 10px;
+				color: #d2492a;
+				padding-left: 3px;
+			}
+			.error{
+				width: 10px;
+				height: 10px;
+				margin-left: 20px;
+				display: inline-block;
+			}
+			.submitGroup{
+				margin-top: 10px;
+				padding: 10px;
+			}
+			#pageFooter{
+				font-family: arial, tahoma, helvetica;
+				font-size: 8pt;
+				text-align: center;
+				line-height: 20px;
+			}
+			#logoutLink{
+				font-size:10pt;
+				padding-top:10px;
+			}
+			table,td,th{
+				border:1px solid black;
+				border-collapse: collapse;
+				margin:0 auto;
+				padding:5px;
+			}
+			td{
+				width:50px;
+				height: 50px;
+				text-align: center;
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pageContainer">
+			<div id="pageHeader">
+				<a id="logo" href="#">
+					<img src="/img/logo.png"/>
+				</a>
+			</div>
+			<div id="body">
+				<div id="mainContainer">
+					<div class="mainContent pod " style>
+						<div id="mainForm">
+							<div class="heading">
+								Search
+							</div>
+							<div class="podSection">
+								<form action="../cgi-bin/first_project.cgi" method="POST">
+									<div class="podSection">
+										<div class="detailsGroup">
+											<div class="editFeild">
+												<label>First Name:</label>
+												<input type="text" name="first_name" id="first_name" class="not_required inputField"/>
+												<span id="first_name_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Last Name:</label>
+												<input type="text" name="last_name" id="last_name" class="not_required inputField"/>
+												<span id="last_name_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>
+													T-number:
+												<span class="symbol">*</span></label>
+												<input type="text" name="tNumber" id="tNumber" class="required inputField"/>
+												<span id="tNumber_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Office:</label>
+												<select name="office_name" id="office_name" class="not_required inputField">
+													<option value=""></option>
+													<option value="Sydney">Sydney</option>
+													<option value="Melbourne">Melbourne</option>
+													<option value="Adeleide">Adeleide</option>
+													<option value="Manila">Manila</option>
+												</select>
+												<span id="office_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Team:</label>
+												<input type="text" name="team_name" id="team_name" class="not_required inputField"/>
+												<span id="team_name_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Position:</label>
+												<input type="text" name="position_name" id="position_name" class="not_required inputField"/>
+												<span id="position_name_Error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Phone:</label>
+												<input type="text" name="phone_number" id="phone_number" class="not_required inputField"/>
+												<span id="phone_number_error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Active?</label>
+												<select name="active" class="not_required inputField">
+														<option value=""></option>
+														<option value="Yes">Yes</option>
+														<option value="No">No</option>
+												</select>
+												<span id="phone_number_error" class="error"></span>
+											</div>
+											<div class="editFeild">
+												<label>Exact Match?</label>
+												<input type="checkbox" name="exact_match">
+											</div>
+											
+										</div>
+										<div class="submitGroup">
+											<input type="submit" name="submit_search" value="Search" class="other_btn"/>
+											<input type="submit" name="change" value="Change Password" />
+											<input type="submit" name="logout" value="Log Out" />
+										</div>
+										
+									</div>
+								</form>
+								
+							</div>
+						</div>
+						<div id="displayTable">
+							<div id="displayContent"><TMPL_VAR NAME="STRING"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="pageFooter">
+				<span id="copyright">Copyright &copy; TPG 2019. All right reserved</span>
+				<a id="termAndConditionsLink" href="http://localhost/first_project.html">Website terms of use</a>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

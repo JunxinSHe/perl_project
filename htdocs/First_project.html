@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #dadada;
+			}
+			#pageContainer{
+				height: 400px;
+				width: 1000px;
+				margin: 0 auto;
+				background: white;
+			}
+			#pageHeader{
+				width: 100%;
+				height: 143px;
+				background: #002244;
+			}
+			#logo{
+				width: 370px;
+				height: 45px;
+				float: left;
+				margin: 40px 0 66px 17px;
+				background: white;
+			}
+			
+			#body{
+				background:#002244;
+				height: 200px;
+				display:block;
+			}
+			#mainContainer{
+				width:auto;
+				height: 170px;
+				margin:auto 22px;
+				background:white;
+			}
+			
+			.mainContent .pod{
+				padding-top: 0;
+			}
+			.pod{
+				display: block;
+				padding: 10px;
+				position: relative;
+			}
+			.pod .heading{
+				display: inline-block;
+				background-color: #818a8f;
+				color: white;
+				font-size: 15px;
+				font-weight: bold;
+				text-align: center;
+				padding: 0 20px 2px;
+				position: relative;
+			}
+			.podSection{
+				display: block;
+				margin-top: 15px;
+				overflow: hidden;
+			}
+			form{
+				display:block;
+				margin-top: 0;
+			}
+			.detailsGroup .wide{
+				width: 700px;
+			}
+			.field{
+				width: 100%;
+			}
+			.detailsGroup .field label{
+				width: 120px;
+			}
+			.editFeild label{
+				vertical-align: baseline;
+			}
+			.field label{
+				display: inline-block;
+				zoom:1;
+			}
+			#passwords{
+				width: 250px;
+			}
+			.error{
+				margin-left: 20px;
+				display: inline-block;
+			}
+			#loginButtonn{
+				clear: both;
+				margin-left: 120px;
+				height:68.4px;
+			}
+			.field .required .symbol{
+				width: 10px;
+				color: #d2492a;
+				padding-left: 3px;
+			}
+			p{
+				display: block;
+				margin: 10px auto;
+			}
+			
+		#pageFooter{
+			text-align: center;
+			margin-top: 20px;
+		}
+		#j_passwordFieldError{
+			width:500px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="pageContainer">
+			<div id="pageHeader">
+				<a id="logo" href="">
+					<img src="img/logo.png"/>
+				</a>
+				<div id="errorMessage">
+					<img id="errorImage" src=""/>
+					<span id="errorText"></span>
+				</div>
+			</div>
+			<div id="body">
+				
+				<div id="mainContainer">
+					<div class="mainContent pod " style>
+						<div class="heading">
+							Login
+						</div>
+						<div class="podSection">
+							<form action="../cgi-bin/first_project.cgi" method="POST">
+								<div class="podSection">
+									<div class="detailsGroup wide">
+										<div class="field editFeild ">
+											<label for="j_usernameField" class="required">
+												Username:
+												<span class="symbol">*</span>
+											</label>
+											<input type="text" name="j_username" id="username" class="required" tabindex="0" autocomplete="off" title value />
+											<span id="j_usernameFieldError" class="error"></span>
+										</div>
+										<div class="field editFeild ">
+											<label for="j_passwordField" class="required">
+												Passord:
+												<span class="symbol">*</span>
+											</label>
+											<input type="password" name="j_password" id="password" class="required" tabindex="0" autocomplete="off" title value />
+											<span id="j_passwordFieldError" class="error"></span>
+										</div>
+									</div>
+									<div id="loginButton">
+										<input id="login_btn" name="login_btn" value="Login" type="submit" />
+									</div>
+								</div>
+							</form>
+							<p>
+								<a href="http://localhost/First_project - forgot password.html">Forgot your password? Click here to reset.</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="pageFooter">
+				<span id="copyright">Copyright &copy; TPG 2019. All right reserved</span>
+				<a id="termAndConditionsLink" href="http://www.google.com">Website terms of use</a>
+				<a id="externalWebsiteLink" href="http://www.aapt.com.au" >aapt.com.au</a>
+			</div>
+		</div>
+		<div id="cboxOverlay"></div>
+		<div id="colorbox" class style="display:none;"></div>
+	</body>
+</html>
